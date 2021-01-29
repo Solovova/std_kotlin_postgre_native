@@ -14,30 +14,30 @@ class PostGreConnection {
             println("Testing connection to PostgreSQL JDBC")
 
             try {
-                Class.forName("org.postgresql.Driver");
+                Class.forName("org.postgresql.Driver")
             } catch (e: ClassNotFoundException) {
                 println("PostgreSQL JDBC Driver is not found. Include it in your library path ")
-                e.printStackTrace();
-                return;
+                e.printStackTrace()
+                return
             }
 
-            println("PostgreSQL JDBC Driver successfully connected");
+            println("PostgreSQL JDBC Driver successfully connected")
             val connection: Connection?
 
             try {
                 connection = DriverManager
-                    .getConnection(DB_URL, USER, PASS);
+                    .getConnection(DB_URL, USER, PASS)
 
             } catch (e: SQLException) {
-                println("Connection Failed");
-                e.printStackTrace();
-                return;
+                println("Connection Failed")
+                e.printStackTrace()
+                return
             }
 
             if (connection != null) {
-                println("You successfully connected to database now");
+                println("You successfully connected to database now")
             } else {
-                println("Failed to make connection to database");
+                println("Failed to make connection to database")
             }
         }
     }
