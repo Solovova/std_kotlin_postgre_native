@@ -1,11 +1,13 @@
-package std_kotlin_postgre_native.db
+package std_kotlin_postgre_native.db.connectors
 
 import java.sql.DriverManager
 import java.sql.Connection
 import java.sql.SQLException
 
-class PGConnection {
+class ConnectorPostgre {
     private val connection: Connection
+
+    fun getConnection():Connection = this.connection
 
     init {
         Class.forName("org.postgresql.Driver")

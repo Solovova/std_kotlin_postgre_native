@@ -1,8 +1,8 @@
-package std_kotlin_postgre_native.db
+package std_kotlin_postgre_native.db.logic
 
 import java.sql.Connection
 
-class PrimaryLogic {
+class LogicPrimary {
     fun tableIs(connection: Connection, tableName: String):Boolean {
         return true
     }
