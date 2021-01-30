@@ -4,7 +4,14 @@ import java.sql.DriverManager
 import java.sql.Connection
 import java.sql.SQLException
 
-class PostGreConnection {
+class PGConnection {
+    private val connection: Connection
+
+    init {
+        Class.forName("org.postgresql.Driver")
+        connection = DriverManager.getConnection(DB_URL, USER, PASS)
+    }
+
     companion object {
         private const val DB_URL: String = "jdbc:postgresql://127.0.0.1:5432/solotest"
         private const val USER: String = "postgres"
@@ -22,10 +29,10 @@ class PostGreConnection {
             }
 
             println("PostgreSQL JDBC Driver successfully connected")
-            val connection: Connection?
+            val testConnection: Connection?
 
             try {
-                connection = DriverManager
+                testConnection = DriverManager
                     .getConnection(DB_URL, USER, PASS)
 
             } catch (e: SQLException) {
@@ -34,7 +41,7 @@ class PostGreConnection {
                 return
             }
 
-            if (connection != null) {
+            if (testConnection != null) {
                 println("You successfully connected to database now")
             } else {
                 println("Failed to make connection to database")
