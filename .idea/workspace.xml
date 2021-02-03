@@ -4,22 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc658e78-92c5-47c7-b60a-a9a7e000ac7a" name="Default Changelist" comment="0.05">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountRecord.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountsRecord.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountsTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+    <list default="true" id="cc658e78-92c5-47c7-b60a-a9a7e000ac7a" name="Default Changelist" comment="0.06">
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentRecord.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/dev/parent/ParentTable.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/dev/parent/field/FieldAnnotation.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/dev/parent/field/FieldType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/dev/parent/sructure/AccountsNew.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/connectors/DB.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/connectors/ConnectorDB.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Account.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Accounts.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Tables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Tables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryRecord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountsRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountRecord.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/AccountsTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Entry.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentTable.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Tables.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Enum" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -63,6 +62,9 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="std_kotlin_postgre_native.db.tables.account_entry" />
+      <recent name="std_kotlin_postgre_native.db.tables.document" />
+      <recent name="std_kotlin_postgre_native.db.tables.account" />
       <recent name="std_kotlin_postgre_native.db.logic" />
       <recent name="std_kotlin_postgre_native.db.connectors" />
     </key>
@@ -71,13 +73,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -115,7 +119,8 @@
       <workItem from="1612265806635" duration="21000" />
       <workItem from="1612335859849" duration="7988000" />
       <workItem from="1612366766616" duration="1166000" />
-      <workItem from="1612367960436" duration="1373000" />
+      <workItem from="1612367960436" duration="1948000" />
+      <workItem from="1612374757190" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="0.00">
       <created>1611959110358</created>
@@ -159,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612337238776</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="0.06">
+      <created>1612369356101</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1612369356101</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +196,7 @@
     <MESSAGE value="0.03" />
     <MESSAGE value="0.04 TableExists" />
     <MESSAGE value="0.05" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.05" />
+    <MESSAGE value="0.06" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.06" />
   </component>
 </project>

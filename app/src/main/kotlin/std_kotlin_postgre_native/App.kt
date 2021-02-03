@@ -1,17 +1,17 @@
 package std_kotlin_postgre_native
 
 import std_kotlin_postgre_native.db.connectors.ConnectorDB
-import std_kotlin_postgre_native.db.tables.AccountsTable
+import std_kotlin_postgre_native.db.tables.account.AccountTable
 import java.sql.SQLException
 
 fun main() {
     try {
         val db = ConnectorDB()
-        AccountsTable.tableDrop(db)
-        AccountsTable.tableCreate(db)
+        AccountTable.tableDrop(db)
+        AccountTable.tableCreate(db)
         val timeStart = System.currentTimeMillis()
         for (i in 0..1000) {
-            val acc1 = AccountsTable.recordCreate(db, "acc$i")
+            val acc1 = AccountTable.recordCreate(db, "acc$i")
         }
         println(System.currentTimeMillis() - timeStart)
 
