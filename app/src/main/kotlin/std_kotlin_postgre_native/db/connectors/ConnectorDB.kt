@@ -1,8 +1,7 @@
 package std_kotlin_postgre_native.db.connectors
-import org.intellij.lang.annotations.Language
 import java.sql.ResultSet
 
-class DB {
+class ConnectorDB {
     private val connector: ConnectorPostgre = ConnectorPostgre()
 
     fun sqlQueryRs(query: String): ResultSet {
@@ -13,33 +12,6 @@ class DB {
     fun sqlQuery(query: String) {
         val st = connector.getConnection().createStatement()
         st.execute(query)
-    }
-
-    fun tableCreate(name: String, body: String) {
-        if (tableExists(name)) return
-
-        @Language("SQL")
-        val query = """
-            CREATE TABLE $name (
-            $body
-        )
-        """
-        this.sqlQuery(query)
-    }
-
-    fun tableExists(name: String): Boolean {
-        @Language("SQL")
-
-        val query = """
-            SELECT *
-                FROM INFORMATION_SCHEMA . TABLES
-                WHERE TABLE_SCHEMA = 'public'
-                AND TABLE_NAME = '$name';
-        
-        """
-
-        val rs = this.sqlQueryRs(query)
-        return rs.next()
     }
 
     private fun rsPrint(rs: ResultSet) {

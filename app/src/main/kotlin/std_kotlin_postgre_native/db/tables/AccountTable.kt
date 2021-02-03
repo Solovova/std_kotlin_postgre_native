@@ -1,8 +1,8 @@
 package std_kotlin_postgre_native.db.tables
 
-import std_kotlin_postgre_native.db.connectors.DB
+import std_kotlin_postgre_native.db.connectors.ConnectorDB
 
-class Account(val db: DB, id: Int, name: String) {
+class AccountTable(val db: ConnectorDB, id: Int, name: String) {
 //    companion object {
 //        fun instance(db: DB, name: String):Account {
 //            if (db)
