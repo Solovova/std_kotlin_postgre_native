@@ -1,0 +1,14 @@
+UPDATE
+   T1
+SET
+   position = T2.rn
+FROM
+   myTable T1
+   JOIN
+   (
+   SELECT
+      id,
+      ROW_NUMBER() OVER (ORDER BY position) AS rn
+   FROM
+      myTable
+   ) T2 ON T1.id = T2.id
