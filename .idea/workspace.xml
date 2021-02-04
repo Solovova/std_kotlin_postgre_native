@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cc658e78-92c5-47c7-b60a-a9a7e000ac7a" name="Default Changelist" comment="0.09">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="cc658e78-92c5-47c7-b60a-a9a7e000ac7a" name="Default Changelist" comment="0.10">
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Tables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/Tables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountRecord.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account/AccountTable.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryRecord.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/account_entry/AccountEntryTable.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentRecord.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentRecord.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentTable.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/kotlin/std_kotlin_postgre_native/db/tables/document/DocumentTable.kt" afterDir="false" />
     </list>
@@ -123,7 +121,7 @@
       <workItem from="1612367960436" duration="1948000" />
       <workItem from="1612374757190" duration="2173000" />
       <workItem from="1612433988183" duration="3000" />
-      <workItem from="1612462995092" duration="5927000" />
+      <workItem from="1612462995092" duration="6441000" />
     </task>
     <task id="LOCAL-00001" summary="0.00">
       <created>1611959110358</created>
@@ -195,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612467008414</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="0.10">
+      <created>1612468990777</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612468990777</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,6 +229,7 @@
     <MESSAGE value="0.07" />
     <MESSAGE value="0.08" />
     <MESSAGE value="0.09" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.09" />
+    <MESSAGE value="0.10" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.10" />
   </component>
 </project>
