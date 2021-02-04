@@ -39,12 +39,17 @@ class AccountTable(var db: ConnectorDB) {
         @Language("SQL")
         val queryPush = """
                 INSERT INTO account ("name")
-                VALUES ('$name');
+                VALUES ('$name')
+                RETURNING id;
             """
-        db.sqlQuery(queryPush)
-        val accountRecord = recordGetByName(name)
-        accountRecord.createAccountEntryTable()
-        return accountRecord
+        val rs = db.sqlQueryRs(queryPush)
+        if (rs.next()) {
+            val accountRecord = AccountRecord(db, rs.getInt(1), name)
+            accountRecord.createAccountEntryTable()
+            return accountRecord
+        }else{
+            throw  SQLException()
+        }
     }
 
     fun recordGetByName(name: String): AccountRecord {

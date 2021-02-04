@@ -2,6 +2,8 @@ package std_kotlin_postgre_native.db.tables.document
 
 import org.intellij.lang.annotations.Language
 import std_kotlin_postgre_native.db.connectors.ConnectorDB
+import std_kotlin_postgre_native.db.tables.account.AccountRecord
+import java.sql.SQLException
 
 class DocumentTable(var db: ConnectorDB) {
     fun tableCreate() {
@@ -18,8 +20,7 @@ class DocumentTable(var db: ConnectorDB) {
                     id bigint DEFAULT nextval('document_id_seq'::regclass) NOT NULL PRIMARY KEY,
                     accountFrom bigint REFERENCES account (id),
                     accountTo bigint REFERENCES account (id),
-                    sum numeric,
-                    "date" date
+                    sum numeric
                 );
             """
 
@@ -34,5 +35,22 @@ class DocumentTable(var db: ConnectorDB) {
                 """
 
         db.sqlQuery(queryTableDrop)
+    }
+
+    fun recordCreate(accountRecordFrom: AccountRecord, accountRecordTo: AccountRecord, sum: Double): DocumentRecord {
+        @Language("SQL")
+        val queryPush = """
+                INSERT INTO document (accountFrom, accountTo, sum)
+                VALUES (${accountRecordFrom.id}, ${accountRecordTo.id}, $sum)
+                RETURNING id;
+            """
+        val rs = db.sqlQueryRs(queryPush)
+        if (rs.next()) {
+            val documentRecord = DocumentRecord(db, rs.getInt(1), accountRecordFrom, accountRecordTo, sum)
+            documentRecord.createAccountEntryRecords()
+            return documentRecord
+        }else{
+            throw  SQLException()
+        }
     }
 }

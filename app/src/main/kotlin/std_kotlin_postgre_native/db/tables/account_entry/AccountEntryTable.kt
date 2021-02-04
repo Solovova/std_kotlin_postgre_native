@@ -17,8 +17,8 @@ class AccountEntryTable(private val db: ConnectorDB, private val accountRecord: 
             
                 CREATE TABLE IF NOT EXISTS account_${accountRecord.id} (
                     id bigint DEFAULT nextval('account_${accountRecord.id}_id_seq'::regclass) NOT NULL PRIMARY KEY,
-                    "name" varchar(255) NOT NULL UNIQUE,
-                    lastModified date
+                    document bigint REFERENCES document (id),
+                    sum numeric
                 );
             """
 

@@ -33,7 +33,16 @@ class Tables(var db: ConnectorDB) {
     fun createTestData() {
         val accountTable = AccountTable(db)
         for (i in 0..10) {
-            val acc1 = accountTable.recordCreate("acc$i")
+            accountTable.recordCreate("acc$i")
         }
+
+        val accountRecord2 = accountTable.recordGetByName("acc2")
+        val accountRecord3 = accountTable.recordGetByName("acc3")
+        val accountRecord4 = accountTable.recordGetByName("acc4")
+
+        val documentTable = DocumentTable(db)
+        documentTable.recordCreate(accountRecord2, accountRecord4, 10.0)
+        documentTable.recordCreate(accountRecord3, accountRecord2, 15.0)
+
     }
 }
