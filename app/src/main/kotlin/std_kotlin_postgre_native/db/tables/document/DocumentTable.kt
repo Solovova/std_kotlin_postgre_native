@@ -16,6 +16,7 @@ class DocumentTable(var db: ConnectorDB) {
             
                 CREATE TABLE IF NOT EXISTS document (
                     id bigint DEFAULT nextval('document_id_seq'::regclass) NOT NULL PRIMARY KEY,
+                    time timestamp,
                     accountFrom bigint REFERENCES account (id),
                     accountTo bigint REFERENCES account (id),
                     sum numeric

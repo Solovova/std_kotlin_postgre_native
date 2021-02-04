@@ -21,11 +21,12 @@ class AccountEntryRecord(
                 VALUES (${documentRecord.id}, $sum)
                 RETURNING id;
             """
-            val rs = db.sqlQueryRs(queryPush)
-            if (rs.next()) {
-                return AccountEntryRecord(db, rs.getInt(1), accountRecord, documentRecord, sum)
-            }else{
-                throw  SQLException()
+            db.sqlQueryRs(queryPush).use { rs ->
+                if (rs.next()) {
+                    return AccountEntryRecord(db, rs.getInt(1), accountRecord, documentRecord, sum)
+                }else{
+                    throw  SQLException()
+                }
             }
         }
     }

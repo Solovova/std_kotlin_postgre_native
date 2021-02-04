@@ -3,7 +3,7 @@ import org.intellij.lang.annotations.Language
 import java.sql.ResultSet
 
 class ConnectorDB {
-    private val connector: ConnectorPostgre = ConnectorPostgre()
+    val connector: ConnectorPostgre = ConnectorPostgre()
 
     fun sqlQueryRs(query: String): ResultSet {
         val st = connector.getConnection().createStatement()

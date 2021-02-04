@@ -18,13 +18,14 @@ class AccountRecord(private val db: ConnectorDB, val id: Int, val name: String) 
                 VALUES ('$name')
                 RETURNING id;
             """
-            val rs = db.sqlQueryRs(queryPush)
-            if (rs.next()) {
-                val accountRecord = AccountRecord(db, rs.getInt(1), name)
-                accountRecord.createAccountEntryTable()
-                return accountRecord
-            }else{
-                throw  SQLException()
+            db.sqlQueryRs(queryPush).use { rs ->
+                if (rs.next()) {
+                    val accountRecord = AccountRecord(db, rs.getInt(1), name)
+                    accountRecord.createAccountEntryTable()
+                    return accountRecord
+                }else{
+                    throw  SQLException()
+                }
             }
         }
 
