@@ -5,8 +5,9 @@ import std_kotlin_postgre_native.db.connectors.ConnectorDB
 import java.sql.SQLException
 
 class AccountTable(var db: ConnectorDB) {
-    @Language("SQL")
-    var queryTableCreate = """
+    fun tableCreate() {
+        @Language("SQL")
+        val queryTableCreate = """
                 CREATE SEQUENCE IF NOT EXISTS account_id_seq
                     START WITH 1
                     INCREMENT BY 1
@@ -21,17 +22,16 @@ class AccountTable(var db: ConnectorDB) {
                 );
             """
 
-    @Language("SQL")
-    var queryTableDrop = """
+        db.sqlQuery(queryTableCreate)
+    }
+
+    fun tableDrop() {
+        @Language("SQL")
+        val queryTableDrop = """
                     DROP TABLE IF EXISTS account;
                     DROP SEQUENCE IF EXISTS account_id_seq ;
                 """
 
-    fun tableCreate(db: ConnectorDB) {
-        db.sqlQuery(queryTableCreate)
-    }
-
-    fun tableDrop(db: ConnectorDB) {
         db.sqlQuery(queryTableDrop)
     }
 
@@ -64,13 +64,18 @@ class AccountTable(var db: ConnectorDB) {
     }
 
     fun recordGetAll(): List<AccountRecord> {
+        val result:MutableList<AccountRecord> = mutableListOf()
+
+        if (!db.tableExists("account")) {
+            return result
+        }
+
         @Language("SQL")
         val queryPresent = """
                 SELECT ID, NAME
                 FROM account;
             """
 
-        val result:MutableList<AccountRecord> = mutableListOf()
         db.sqlQueryRs(queryPresent).use { rs ->
             while (rs.next()) {
                 result.add(AccountRecord(db, rs.getInt(1), rs.getString(2)))

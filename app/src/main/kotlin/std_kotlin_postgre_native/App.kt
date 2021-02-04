@@ -2,6 +2,7 @@ package std_kotlin_postgre_native
 
 import std_kotlin_postgre_native.db.connectors.ConnectorDB
 import std_kotlin_postgre_native.db.tables.Tables
+import std_kotlin_postgre_native.db.tables.account.AccountTable
 import java.sql.SQLException
 
 fun main() {
@@ -10,18 +11,15 @@ fun main() {
 
         val tables = Tables(db)
         tables.tablesDrop()
+        tables.tablesCreate()
 
-//        val accountTable = AccountTable(db)
-//        val timeStart = System.currentTimeMillis()
-//        for (i in 0..10) {
-//            val acc1 = accountTable.recordCreate("acc$i")
-//        }
-//        println(System.currentTimeMillis() - timeStart)
 
-//        val acc1 = Accounts.getRecord(db, "acc1")
-//        println(acc1.id)
-//        val acc2 = Accounts.getRecord(db, "acc2")
-//        println(acc2.id)
+        val timeStart = System.currentTimeMillis()
+
+        tables.createTestData()
+
+        println(System.currentTimeMillis() - timeStart)
+
 
     }catch (e: ClassNotFoundException){
         println("PostgreSQL JDBC Driver is not found. Include it in your library path ")
